@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 
 export default class Questions extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    question: PropTypes.string.isRequired,
+    answer: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -14,31 +15,34 @@ export default class Questions extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    this.state = {
+      question: this.props.question,
+      answer: this.props.answer };
   }
 
-  updateName = (name) => {
-    this.setState({ name });
+  updateAnswer = (answer) => {
+    this.setState({ answer });
   };
 
   render() {
     return (
       <div>
         <h3>
-          Hello, {this.state.name}!
+          {this.state.question}
         </h3>
         <hr />
         <form >
-          <label htmlFor="name">
-            Say hello to:
+          <label htmlFor="answer">
+            Answer:
           </label>
           <input
-            id="name"
+            id="answer"
             type="text"
-            value={this.state.name}
-            onChange={(e) => this.updateName(e.target.value)}
+            value={this.state.answer}
+            onChange={(e) => this.updateAnswer(e.target.value)}
           />
         </form>
+        <h5>{this.state.answer}</h5>
       </div>
     );
   }
