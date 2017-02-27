@@ -1,9 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import axios from 'axios';
 
-export default class Questions extends React.Component {
+export default class Questions extends Component {
   static propTypes = {
     question: PropTypes.string.isRequired,
-    answer: PropTypes.string.isRequired, // this is passed from the Rails view
+    answer: PropTypes.number.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -23,6 +24,12 @@ export default class Questions extends React.Component {
   updateAnswer = (answer) => {
     this.setState({ answer });
   };
+
+  // componentDidMount() {
+  //   $.getJSON('/questions'), (response) => {
+  //     console.log(response);
+  //   }
+  // }
 
   render() {
     return (
