@@ -13,7 +13,7 @@ const config = {
     'es5-shim/es5-shim',
     'es5-shim/es5-sham',
     'babel-polyfill',
-    './app/bundles/Questions/startup/registration',
+    './app/bundles/Main/startup/registration',
   ],
 
   output: {
