@@ -27,4 +27,15 @@ RSpec.describe QuestionsController, type: :controller do
       expect(question_text).to eq('What is 4 * 5?')
     end
   end
+
+  describe '#update' do
+    it 'should update question' do
+      question = FactoryGirl.create(:question, question_text: 'What is 3 * 6?')
+      put :update, id: question.id, question: {question_text: 'What is 9 * 2?'}
+      expect(response).to have_http_status :success
+
+      question.reload
+      expect(question.question_text).to eq('What is 9 * 2?')
+    end
+  end
 end
