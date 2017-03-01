@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
-  describe 'questions#index' do
-    it 'should list the questions' do
-      question = FactoryGirl.create(:question)
+  describe '#index' do
+    it 'should return all questions' do
+      question1 = FactoryGirl.create(:question)
+      question2 = FactoryGirl.create(:question)
       get :index
       expect(response).to have_http_status :success
 
       response_body = ActiveSupport::JSON.decode(@response.body)
-      response_id = response_body[0]['id']
+      expect(response_body.count).to eq(2)
 
-      expect(response_id).to eq(question.id)
+      response_ids = response_body.collect {|question| question['id']}
+      expect(response_ids).to eq([question1.id, question2.id])
     end
   end
 end
