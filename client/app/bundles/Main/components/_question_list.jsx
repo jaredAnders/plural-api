@@ -44,7 +44,14 @@ export default class QuestionList extends Component {
 
     return (
       <div>
-        <Table className='table'>
+        <Table
+          className='table'
+          itemsPerPage={10}
+          pageButtonLimit={3}
+          sortable={true}
+          defaultSort={{column: 'ID', direction: 'asc'}}
+          filterable={['ID', 'Question', 'Answer', 'Distractors']}
+          >
           {questions}
         </Table>
         <SkyLight hideOnOverlayClicked ref="editQuestion" title="Edit Question">
