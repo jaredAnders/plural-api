@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import NewQuestion from './_new_question.jsx';
 import QuestionList from './_question_list.jsx';

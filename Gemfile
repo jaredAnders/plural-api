@@ -48,6 +48,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'react_on_rails', '~>6'
-
+gem 'materialize-sass'
 gem 'mini_racer', platforms: :ruby
+gem 'react_on_rails', '~>6'
