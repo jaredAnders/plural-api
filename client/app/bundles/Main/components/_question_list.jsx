@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import { Table, Tr, Td, unsafe } from 'reactable';
 
-import QuestionListItem from './_question_list_item'
-
-export default class QuestionList extends React.Component {
+export default class QuestionList extends Component {
   constructor(props) {
     super(props);
 
@@ -16,17 +15,22 @@ export default class QuestionList extends React.Component {
   render() {
     const questions = this.props.questions.map((question) => {
       return (
-        <QuestionListItem
-          key={question.id}
-          question={question}
-          handleUpdate={this.handleUpdate} />
+        <Tr key={question.id}>
+          <Td column='Question'>{question.question_text}</Td>
+          <Td column='Answer'>{question.answer}</Td>
+          <Td column='Distractors'>{question.distractors}</Td>
+          <Td column='Action'>{unsafe('<button onClick={this.handleEdit.bind(this)}>Edit</button>')}</Td>
+        </Tr>
       )
     })
 
+    // question={question}
+    // handleUpdate={this.handleUpdate}
+
     return (
-      <ul>
+      <Table className='table'>
         {questions}
-      </ul>
+      </Table>
     )
   }
 }

@@ -31,6 +31,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-on-rails": "6.6.0",
+    "reactable": "^0.14.1",
     "webpack": "^1.14.0"
   },
   "devDependencies": {}
