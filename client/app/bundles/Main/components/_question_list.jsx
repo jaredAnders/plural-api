@@ -60,7 +60,6 @@ export default class QuestionList extends Component {
             handleUpdate={this.handleUpdate}/>
         </SkyLight>
       </div>
-
     )
   }
 }
