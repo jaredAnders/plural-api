@@ -32,7 +32,7 @@ export default class QuestionEditForm extends Component {
           ref='distractors'
           defaultValue={this.props.question.distractors.map((distractor) => {
           return ` ${distractor}`})} />
-        <button onClick={this.handleEdit.bind(this)}>Save</button>
+        <a className='waves-effect waves-light btn right' onClick={this.handleEdit.bind(this)}>Save</a>
       </div>
     )
   }
