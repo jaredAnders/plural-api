@@ -1922,6 +1922,10 @@ react-on-rails@6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/react-on-rails/-/react-on-rails-6.6.0.tgz#8182911801d8ef0642ade3b2f136639239a621f1"
 
+react-skylight@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-skylight/-/react-skylight-0.4.1.tgz#07d1af6dea0a50a5d8122a786a8ce8bc6bdf2241"
+
 react@^15.4.1:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"

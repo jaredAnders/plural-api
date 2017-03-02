@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
 import { Table, Tr, Td, unsafe } from 'reactable';
+import SkyLight from 'react-skylight';
+
+import QuestionEditForm from './_question_edit_form'
 
 export default class QuestionList extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      question: {}
+    }
+
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleUpdate(question) {
     this.props.onUpdate(question);
+    this.refs.editQuestion.hide();
+  }
+
+  handleEdit(question) {
+    this.setState({question});
+    this.refs.editQuestion.show();
   }
 
   render() {
     const questions = this.props.questions.map((question) => {
       return (
         <Tr key={question.id}>
+          <Td column='ID'>{question.id}</Td>
           <Td column='Question'>{question.question_text}</Td>
           <Td column='Answer'>{question.answer}</Td>
           <Td column='Distractors'>{question.distractors}</Td>
-          <Td column='Action'>{unsafe('<button onClick={this.handleEdit.bind(this)}>Edit</button>')}</Td>
+          <Td column='Action'><button onClick={() => { this.handleEdit(question)} }>Edit</button></Td>
         </Tr>
       )
     })
@@ -28,9 +43,17 @@ export default class QuestionList extends Component {
     // handleUpdate={this.handleUpdate}
 
     return (
-      <Table className='table'>
-        {questions}
-      </Table>
+      <div>
+        <Table className='table'>
+          {questions}
+        </Table>
+        <SkyLight hideOnOverlayClicked ref="editQuestion" title="Edit Question">
+          <QuestionEditForm
+            question={this.state.question}
+            handleUpdate={this.handleUpdate}/>
+        </SkyLight>
+      </div>
+
     )
   }
 }
