@@ -36,7 +36,7 @@ export default class NewQuestion extends Component {
         <input ref='answer' placeholder='answer' />
         <input ref='distractors' placeholder='distractor 1, distractor 2, ...' />
         <br/>
-        <button onClick={this.handleClick.bind(this)}>Submit</button>
+        <button onClick={this.handleClick.bind(this)}>Add new question</button>
       </div>
     )
   }

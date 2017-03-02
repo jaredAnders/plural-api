@@ -47,6 +47,7 @@ export default class Main extends Component {
   render() {
     return (
       <div>
+        <h1>Questions</h1>
         <NewQuestion handleSubmit={this.handleSubmit}/>
         <QuestionList questions={this.state.questions} onUpdate={this.onUpdate} />
       </div>
