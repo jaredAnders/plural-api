@@ -32,11 +32,20 @@ export default class NewQuestion extends Component {
   render() {
     return (
       <div>
-        <input ref='question' placeholder='question' />
-        <input ref='answer' placeholder='answer' />
-        <input ref='distractors' placeholder='distractor 1, distractor 2, ...' />
-        <br/>
-        <button onClick={this.handleClick.bind(this)}>Add new question</button>
+        <div className='row'>
+          <div className="col m6 s12">
+            <input ref='question' placeholder='question' />
+          </div>
+          <div className="col m2 s3">
+            <input ref='answer' placeholder='answer' />
+          </div>
+          <div className="col m4 s9">
+            <input ref='distractors' placeholder='distractor 1, distractor 2, ...' />
+          </div>
+        </div>
+        <div className="row">
+          <a className="waves-effect waves-light btn right" onClick={this.handleClick.bind(this)}>Add new question</a>
+        </div>
       </div>
     )
   }

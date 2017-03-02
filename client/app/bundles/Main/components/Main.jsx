@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import NewQuestion from './_new_question.jsx';
 import QuestionList from './_question_list.jsx';
@@ -46,7 +45,7 @@ export default class Main extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <h1>Questions</h1>
         <NewQuestion handleSubmit={this.handleSubmit}/>
         <QuestionList questions={this.state.questions} onUpdate={this.onUpdate} />
