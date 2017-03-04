@@ -51,4 +51,4 @@ end
 gem 'rails_12factor', group: :production
 gem 'materialize-sass'
 gem 'mini_racer', platforms: :ruby
-gem 'react_on_rails', '~>6'
+gem 'react_on_rails', '6.6.0'
