@@ -1,5 +1,7 @@
 # Pluralsight API
- Web Application that parses CSV data, exposes RESTful API endpoints via Rails back-end and consumes via React front-end.
+Web Application that parses CSV data, exposes RESTful API endpoints via Rails back-end and consumes via React front-end.
+
+View production app: http://plural-api.herokuapp.com/
 
 ## Instructions
 
